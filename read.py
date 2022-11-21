@@ -28,3 +28,8 @@ for data in read_limit:
 sorting_data = col.find().sort("name",1) # 1 ASC -1 DESC
 for data in sorting_data:
     print(sorting_data)
+
+# SKIP Values
+skip_data = col.find().skip(1)
+for data in skip_data:
+    print(data)
