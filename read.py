@@ -17,3 +17,14 @@ for data in read_data:
 condition_data = col.find({"job_role":"Manager"})
 
 print(condition_data)
+
+# READ ALL DATA WITH LIMIT 
+
+read_limit =  col.find().limit(2)
+for data in read_limit:
+    print(data)
+
+# SORTING THE DATA
+sorting_data = col.find().sort("name",1) # 1 ASC -1 DESC
+for data in sorting_data:
+    print(sorting_data)
