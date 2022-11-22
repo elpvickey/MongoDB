@@ -1,5 +1,5 @@
 import pymongo
-import pprint
+from pprint import pprint
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 
@@ -14,4 +14,4 @@ col = db["test_collection"]
 x = col.aggregate([{'$group': {'_id':'$name', 'count': {'$sum': 1}}}, {'$match': {'count': {'$gt': 1}}}])
 
 for i in x:
-    print(i)
+    pprint(i['_id'])
