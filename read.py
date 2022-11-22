@@ -1,4 +1,5 @@
 import pymongo
+from pprint import pprint
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 
@@ -10,26 +11,26 @@ col = db["test_collection"]
 read_data = col.find()
 
 for data in read_data:
-    print(data)
+    pprint(data)
 
 # READ DATA USING WHERE CONDITION
 
 condition_data = col.find({"job_role":"Manager"})
 
-print(condition_data)
+pprint(condition_data)
 
 # READ ALL DATA WITH LIMIT 
 
 read_limit =  col.find().limit(2)
 for data in read_limit:
-    print(data)
+    pprint(data)
 
 # SORTING THE DATA
 sorting_data = col.find().sort("name",1) # 1 ASC -1 DESC
 for data in sorting_data:
-    print(sorting_data)
+    pprint(sorting_data)
 
 # SKIP Values
 skip_data = col.find().skip(1)
 for data in skip_data:
-    print(data)
+    pprint(data)
