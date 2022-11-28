@@ -1,7 +1,7 @@
 import pymongo
 from pprint import pprint
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb+srv://vigneshramperumal:<password>@cluster0.uukk3p9.mongodb.net/test")
 
 db = client["test_learning"]
 
